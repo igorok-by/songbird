@@ -1,0 +1,14 @@
+@import "../../assets/scss/vars";
+
+.header {
+  margin-top: 2rem;
+}
+
+.header__logo {
+  width: 100%;
+  max-width: 200px;
+}
+
+.header__score {
+  color: $success;
+}
