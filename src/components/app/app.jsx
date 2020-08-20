@@ -3,7 +3,10 @@ import './app.scss';
 // import Dummy from '../../assets/img/dummy.jpg';
 
 import Header from '../header';
-import QuestionsList from '../questions-list';
+import GroupsList from '../groups-list';
+import QuestionContainer from '../question-container';
+import AnswerContainer from '../answer-container';
+import ButtonNext from '../button-next';
 
 export default class App extends Component {
 
@@ -14,8 +17,13 @@ export default class App extends Component {
   render() {
     return (
       <div className="container">
-        <Header />
-        <QuestionsList />
+        <div className="row">
+          <Header />
+          <GroupsList />
+          <QuestionContainer />
+          <AnswerContainer />
+          <ButtonNext />
+        </div>
       </div>
     );
   }

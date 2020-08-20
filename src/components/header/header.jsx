@@ -12,15 +12,13 @@ const Logo = () => {
 
 const Header = () => {
   return (
-    <div className="row">
-      <div className="header
-            col-12
-            d-flex
-            align-items-center
-            justify-content-between">
-        <Logo />
-        <ScoreHolder score={1} />
-      </div>
+    <div className="header
+          col-12
+          d-flex
+          align-items-center
+          justify-content-between">
+      <Logo />
+      <ScoreHolder score={1} />
     </div>
   )
 };

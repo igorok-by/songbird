@@ -3,7 +3,7 @@ import React from 'react';
 const ScoreHolder = ({ score }) => {
   return (
     <h4 className="header__score">
-      Score: 
+      Счёт: 
       <span>{` ${ score }`}</span>
     </h4>
   )
