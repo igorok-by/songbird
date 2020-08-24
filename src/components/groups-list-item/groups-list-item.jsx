@@ -1,8 +1,10 @@
 import React  from 'react';
 
-const GroupsListItem = ({title}) => {
+const GroupsListItem = ({title, isActive}) => {
   return (
-    <li className="page-item flex-fill text-center">
+    <li className={
+      `page-item flex-fill text-center ${isActive ? 'active' : ''}`
+    }>
       <a className="page-link" href="/#">{title}</a>
     </li>
   )
