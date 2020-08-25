@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './app.scss';
 import BIRD_GROUPS from '../../data/birdGroups';
+import BIRDS_DATA from '../../data/birds';
 // import Dummy from '../../assets/img/dummy.jpg';
 
 import Header from '../header';
@@ -9,7 +10,7 @@ import QuestionContainer from '../question-container';
 import AnswerContainer from '../answer-container';
 import ButtonNext from '../button-next';
 
-const birdGroups = (currNumber) =>
+const setBirdGroups = (currNumber) =>
   BIRD_GROUPS.map((group, idx) => {
     let isActive = false;
     if (idx === currNumber) isActive = true;
@@ -21,19 +22,35 @@ const birdGroups = (currNumber) =>
   }
 );
 
+const setBirdItems = (currNumber) =>
+  BIRDS_DATA[currNumber].map((birdItem) => {
+    return {
+      ...birdItem,
+      answerStatus: 'inactive',
+    }
+  }
+);
+
 const toggleActiveGroup = (groups, groupToBeActive) =>
   groups.map((group) => {
-    group.isActive = (group.title === groupToBeActive);
-    return group;
+    const newGroup = group;
+    newGroup.isActive = (newGroup.title === groupToBeActive);
+    return newGroup;
   }
 );
 
 const App = () => {
   const [currNumberOfGroup, setCurrNumberOfGroup] = useState(0);
-  const [groups, setActiveGroup] = useState(birdGroups(currNumberOfGroup));
+  const [groups, setActiveGroup] = useState(setBirdGroups(currNumberOfGroup));
+  const [birdGroupData, setAnswersStatus] = useState(setBirdItems(currNumberOfGroup));
+  
   const handleRightAnswer = () => {
     setCurrNumberOfGroup(currNumberOfGroup + 1);
-    setActiveGroup(toggleActiveGroup(groups, BIRD_GROUPS[currNumberOfGroup]));
+    setActiveGroup(toggleActiveGroup(groups, BIRD_GROUPS[currNumberOfGroup + 1]));
+  };
+
+  const handleAnswerClick = (birdName) => {
+    console.log(birdName)
   };
   
   return (
@@ -42,7 +59,9 @@ const App = () => {
         <Header />
         <GroupsList birdGroups={groups} />
         <QuestionContainer />
-        <AnswerContainer />
+        <AnswerContainer
+          birdGroupData={birdGroupData}
+          handleAnswerClick={handleAnswerClick} />
         <ButtonNext change={handleRightAnswer} />
       </div>
     </div>
