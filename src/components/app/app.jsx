@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './app.scss';
 import BIRD_GROUPS from '../../data/birdGroups';
 import BIRDS_DATA from '../../data/birds';
+import getRandomNumber from '../../utils/getRandomNumber';
 // import Dummy from '../../assets/img/dummy.jpg';
 
 import Header from '../header';
@@ -43,6 +44,8 @@ const App = () => {
   const [currNumberOfGroup, setCurrNumberOfGroup] = useState(0);
   const [groups, setActiveGroup] = useState(setBirdGroups(currNumberOfGroup));
   const [birdGroupData, setAnswersStatus] = useState(setBirdItems(currNumberOfGroup));
+  const [currNumberOfBird, setNumbOfBird] = useState(getRandomNumber(0, birdGroupData.length));
+  const [isQuestionOpen, setQuestionState] = useState(true);
   
   const handleRightAnswer = () => {
     setCurrNumberOfGroup(currNumberOfGroup + 1);
@@ -50,7 +53,7 @@ const App = () => {
   };
 
   const handleAnswerClick = (birdName) => {
-    console.log(birdName)
+    console.log(birdName);
   };
   
   return (
@@ -58,8 +61,11 @@ const App = () => {
       <div className="row">
         <Header />
         <GroupsList birdGroups={groups} />
-        <QuestionContainer />
+        <QuestionContainer 
+          isQuestionOpen={isQuestionOpen}
+          birdData={birdGroupData[currNumberOfBird]} />
         <AnswerContainer
+          currNumberOfBird={currNumberOfBird}
           birdGroupData={birdGroupData}
           handleAnswerClick={handleAnswerClick} />
         <ButtonNext change={handleRightAnswer} />
