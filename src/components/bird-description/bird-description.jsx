@@ -1,10 +1,10 @@
 import React from 'react';
 import './bird-description.scss';
 
-const BirdDescription = ({description}) => {
+const BirdDescription = ({birdData}) => {
   return (
     <p className="bird-description">
-      {description}
+      {birdData}
     </p>
   )
 };

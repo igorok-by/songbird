@@ -16,7 +16,9 @@ const QuestionContainer = ({isQuestionOpen, birdData}) => {
         <div className="col-9 d-flex">
           <div className="flex-fill list-group list-group-flush rounded">
             <div className="flex-fill list-group-item">
-              <BirdName />
+              <BirdName
+                isQuestionOpen={isQuestionOpen}
+                birdData={birdData} />
             </div>
             <div className="flex-fill list-group-item">
               <Player birdData={birdData} />

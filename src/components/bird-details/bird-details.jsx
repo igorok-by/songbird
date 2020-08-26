@@ -22,15 +22,18 @@ const BirdDetails = ({birdData}) => {
         <div className="col-7 d-flex">
           <div className="flex-fill list-group list-group-flush rounded">
             <div className="flex-fill list-group-item">
-              <BirdName />
+              <BirdName
+                birdData={birdData} />
             </div>
             <div className="flex-fill list-group-item">
-              <Player birdData={birdData} />
+              <Player
+                birdData={birdData} />
             </div>
           </div>
         </div>
         <div className="col-12">
-          <BirdDescription description={birds[0][0].description} />
+          <BirdDescription
+            birdData={birdData.description} />
         </div>
       </div>
     </div>

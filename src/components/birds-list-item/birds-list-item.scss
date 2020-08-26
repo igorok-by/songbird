@@ -9,15 +9,27 @@
     background-color: #444444;
   }
 
-  & span {
+  span {
     display: inline-block;
     width: 10px;
     height: 10px;
     margin-right: 15px;
 
-    background-color: #444444;
+    background-color: $primary;
     border-radius: 50%;
 
     transition: $def-transition;
+  }
+}
+
+.birds-list-item--wrong {
+  span {
+    background-color: $danger;
+  }
+}
+
+.birds-list-item--right {
+  span {
+    background-color: $success-light;
   }
 }

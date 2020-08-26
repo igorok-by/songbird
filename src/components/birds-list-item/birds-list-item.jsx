@@ -6,10 +6,10 @@ const BirdsListItem = ({answerStatus, birdName, handleClick}) => {
 
   switch (answerStatus) {
     case 'wrong':
-      classes += ' wrong';
+      classes += ' birds-list-item birds-list-item--wrong';
       break;
     case 'right':
-      classes += ' right';
+      classes += ' birds-list-item birds-list-item--right';
       break;
     default:
       classes += ' birds-list-item';

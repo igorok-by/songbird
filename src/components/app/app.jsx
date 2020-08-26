@@ -3,7 +3,7 @@ import './app.scss';
 import BIRD_GROUPS from '../../data/birdGroups';
 import BIRDS_DATA from '../../data/birds';
 import getRandomNumber from '../../utils/getRandomNumber';
-// import Dummy from '../../assets/img/dummy.jpg';
+import AUDIO_SRC from '../../data/audioSrc';
 
 import Header from '../header';
 import GroupsList from '../groups-list';
@@ -53,14 +53,32 @@ const App = () => {
   };
 
   const handleAnswerClick = (birdName) => {
-    console.log(birdName);
+    const resultSound = new Audio();
+    const newBirdGroupData = birdGroupData.map((birdItem) => {
+      if (birdItem.name === birdName) {
+
+        if (birdItem.name !== birdGroupData[currNumberOfBird].name) {
+          resultSound.src = AUDIO_SRC.fail;
+          birdItem.answerStatus = 'wrong';
+
+        } else {
+          resultSound.src = AUDIO_SRC.win;
+          birdItem.answerStatus = 'right';
+        }
+      }
+      return birdItem;
+    });
+
+    resultSound.play();
+    setAnswersStatus(newBirdGroupData);
   };
   
   return (
     <div className="container">
       <div className="row">
         <Header />
-        <GroupsList birdGroups={groups} />
+        <GroupsList
+          birdGroups={groups} />
         <QuestionContainer 
           isQuestionOpen={isQuestionOpen}
           birdData={birdGroupData[currNumberOfBird]} />
@@ -68,7 +86,8 @@ const App = () => {
           currNumberOfBird={currNumberOfBird}
           birdGroupData={birdGroupData}
           handleAnswerClick={handleAnswerClick} />
-        <ButtonNext change={handleRightAnswer} />
+        <ButtonNext
+          change={handleRightAnswer} />
       </div>
     </div>
   );
