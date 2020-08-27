@@ -1,10 +1,12 @@
 import React from 'react';
 import './button-next.scss';
 
-const ButtonNext = ({isQuestionOpen, handleNextClick}) => {
+const ButtonNext = ({isQuestionOpen, isQuestionLast, handleNextClick}) => {
+
+  const classes = isQuestionLast ? 'd-none' : 'col-12'
 
   return (
-    <div className="col-12">
+    <div className={classes}>
       <button
         className="btn btn-block button-next"
         type="button"

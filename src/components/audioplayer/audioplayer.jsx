@@ -4,14 +4,13 @@ import 'react-h5-audio-player/src/styles.scss';
 import './audioplayer.scss';
 import { create } from 'lodash';
 
-const Player = ({isQuestionOpen, birdData, controlPlayer}) => {
+const Player = ({isQuestionOpen, birdData}) => {
   const player = useRef();
+
   useEffect(() => {
     if (!isQuestionOpen) player.current.audio.current.pause();
-    // console.log(player.current);
   });
-    // console.log(player.current);
-  // if (!isQuestionOpen) player.current.audio.current.pause();
+
   return (
     <AudioPlayer
       ref={player}

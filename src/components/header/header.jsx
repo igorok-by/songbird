@@ -10,7 +10,7 @@ const Logo = () => {
   )
 };
 
-const Header = () => {
+const Header = ({score}) => {
   return (
     <div className="header
           col-12
@@ -18,7 +18,7 @@ const Header = () => {
           align-items-center
           justify-content-between">
       <Logo />
-      <ScoreHolder score={1} />
+      <ScoreHolder score={score} />
     </div>
   )
 };

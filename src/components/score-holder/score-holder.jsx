@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ScoreHolder = ({ score }) => {
+const ScoreHolder = ({score}) => {
   return (
     <h4 className="header__score">
       Счёт: 
-      <span>{` ${ score }`}</span>
+      <span>{` ${score}`}</span>
     </h4>
   )
 };

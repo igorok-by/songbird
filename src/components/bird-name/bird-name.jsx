@@ -2,13 +2,20 @@ import React from 'react';
 import './bird-name.scss';
 
 const BirdName = ({isQuestionOpen, birdData}) => {
-  let birdName = birdData.name;
-  if (isQuestionOpen) {
-    birdName = '******';
-  }
+
+  const Name = () => {
+    if (isQuestionOpen) return '******';
+
+    return (
+      <>
+        {birdData.name}
+        <span> {`(${birdData.species})`}</span>
+      </>
+    )
+  };
 
   return (
-    <h4>{birdName}</h4>
+    <h4><Name /></h4>
   )
 };
 
