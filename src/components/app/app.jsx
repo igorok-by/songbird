@@ -44,32 +44,43 @@ const App = () => {
   const [currNumberOfGroup, setCurrNumberOfGroup] = useState(0);
   const [groups, setActiveGroup] = useState(setBirdGroups(currNumberOfGroup));
   const [birdGroupData, setAnswersStatus] = useState(setBirdItems(currNumberOfGroup));
-  const [currNumberOfBird, setNumbOfBird] = useState(getRandomNumber(0, birdGroupData.length));
+  const [currNumberOfHiddenBird, setNumbOfHiddenBird] = useState(getRandomNumber(0, birdGroupData.length));
+  const [currNumberOfClickedBird, setNumbOfClickedBird] = useState(0);
   const [isQuestionOpen, setQuestionState] = useState(true);
-  
-  const handleRightAnswer = () => {
+  const [isAnswerEverClicked, setAnswerClicked] = useState(false);
+
+  const handleNextClick = () => {
+    setQuestionState(true);
     setCurrNumberOfGroup(currNumberOfGroup + 1);
     setActiveGroup(toggleActiveGroup(groups, BIRD_GROUPS[currNumberOfGroup + 1]));
+  };
+  
+  const handleRightAnswer = () => {
+    setQuestionState(false);
   };
 
   const handleAnswerClick = (birdName) => {
     const resultSound = new Audio();
+
     const newBirdGroupData = birdGroupData.map((birdItem) => {
       if (birdItem.name === birdName) {
+        setNumbOfClickedBird(birdItem.id - 1);
 
-        if (birdItem.name !== birdGroupData[currNumberOfBird].name) {
+        if (birdItem.name !== birdGroupData[currNumberOfHiddenBird].name) {
           resultSound.src = AUDIO_SRC.fail;
           birdItem.answerStatus = 'wrong';
 
         } else {
           resultSound.src = AUDIO_SRC.win;
           birdItem.answerStatus = 'right';
+          handleRightAnswer();
         }
       }
       return birdItem;
     });
 
     resultSound.play();
+    if (!isAnswerEverClicked) setAnswerClicked(true);
     setAnswersStatus(newBirdGroupData);
   };
   
@@ -77,17 +88,23 @@ const App = () => {
     <div className="container">
       <div className="row">
         <Header />
+
         <GroupsList
           birdGroups={groups} />
+
         <QuestionContainer 
           isQuestionOpen={isQuestionOpen}
-          birdData={birdGroupData[currNumberOfBird]} />
+          birdData={birdGroupData[currNumberOfHiddenBird]} />
+          
         <AnswerContainer
-          currNumberOfBird={currNumberOfBird}
+          isAnswerEverClicked={isAnswerEverClicked}
+          currNumberOfClickedBird={currNumberOfClickedBird}
           birdGroupData={birdGroupData}
           handleAnswerClick={handleAnswerClick} />
+
         <ButtonNext
-          change={handleRightAnswer} />
+          isQuestionOpen={isQuestionOpen}
+          handleNextClick={handleNextClick} />
       </div>
     </div>
   );

@@ -8,18 +8,24 @@ import BirdName from '../bird-name';
 import Player from '../audioplayer';
 import BirdDescription from '../bird-description';
 
-const BirdDetails = ({birdData}) => {
+const BirdDetails = ({isAnswerEverClicked, birdData}) => {
+
+  const classesInstruction = isAnswerEverClicked ? 'd-none' : 'col-12';
+  const classesPicture = isAnswerEverClicked ? 'col-5 d-flex' : 'd-none';
+  const classesName = isAnswerEverClicked ? 'col-7 d-flex' : 'd-none';
+  const classesDescr = isAnswerEverClicked ? 'col-12' : 'd-none';
+  
   return (
     <div className="col-6">
       <div className="row">
-        <div className="col-12">
+        <div className={classesInstruction}>
           <Instruction />
         </div>
-        <div className="col-5 d-flex">
+        <div className={classesPicture}>
           <BirdPicture
             birdData={birdData} />
         </div>
-        <div className="col-7 d-flex">
+        <div className={classesName}>
           <div className="flex-fill list-group list-group-flush rounded">
             <div className="flex-fill list-group-item">
               <BirdName
@@ -31,7 +37,7 @@ const BirdDetails = ({birdData}) => {
             </div>
           </div>
         </div>
-        <div className="col-12">
+        <div className={classesDescr}>
           <BirdDescription
             birdData={birdData.description} />
         </div>
