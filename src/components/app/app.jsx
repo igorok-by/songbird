@@ -45,9 +45,10 @@ const App = () => {
   const [groups, setActiveGroup] = useState(setBirdGroups(currNumberOfGroup));
   const [birdGroupData, setAnswersStatus] = useState(setBirdItems(currNumberOfGroup));
 
-  const [currNumberOfHiddenBird, setNumbOfHiddenBird] = useState(getRandomNumber(0, birdGroupData.length));
+  const [currNumberOfHiddenBird, setNumbOfHiddenBird] = useState(getRandomNumber(0, birdGroupData.length - 1));
   const [currNumberOfClickedBird, setNumbOfClickedBird] = useState(0);
-  const [score, setScore] = useState(0);
+  const [generalScore, setGeneralScore] = useState(0);
+  const [currentScore, setCurrentScore] = useState(groups.length - 1);
 
   const [isQuestionLast, setQuestionLast] = useState(false);
   const [isQuestionOpen, setQuestionState] = useState(true);
@@ -58,12 +59,14 @@ const App = () => {
   };
 
   const handleNextClick = () => {
+    console.log(isQuestionOpen);
     setQuestionState(true);
+    setAnswerClicked(false);
     setCurrNumberOfGroup(currNumberOfGroup + 1);
     setActiveGroup(toggleActiveGroup(groups, BIRD_GROUPS[currNumberOfGroup + 1]));
     setAnswersStatus(setBirdItems(currNumberOfGroup + 1));
-    setNumbOfHiddenBird(getRandomNumber(0, birdGroupData.length));
-    if (currNumberOfGroup === (groups.length - 5)) {
+    setNumbOfHiddenBird(getRandomNumber(0, birdGroupData.length - 1));
+    if (currNumberOfGroup === (groups.length - 2)) {
       setQuestionLast(true);
     }
   };
@@ -79,8 +82,10 @@ const App = () => {
           if (birdItem.name !== birdGroupData[currNumberOfHiddenBird].name) {
             resultSound.src = AUDIO_SRC.fail;
             birdItem.answerStatus = 'wrong';
+            setCurrentScore(currentScore - 1);
             
           } else {
+            setGeneralScore(generalScore + currentScore);
             resultSound.src = AUDIO_SRC.win;
             birdItem.answerStatus = 'right';
             setQuestionState(false);
@@ -93,14 +98,16 @@ const App = () => {
     resultSound.play();
     setAnswersStatus(newBirdGroupData);
     if (!isAnswerEverClicked) setAnswerClicked(true);
+    console.log('1', isQuestionOpen);
     if (isQuestionLast) handleFinish();
   };
+
   
   return (
     <div className="container">
       <div className="row">
         <Header
-          score={score} />
+          score={generalScore} />
 
         <GroupsList
           birdGroups={groups} />

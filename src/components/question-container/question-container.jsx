@@ -1,14 +1,12 @@
-import React, {createRef} from 'react';
+import React from 'react';
 import './question-container.scss';
 import BirdPicture from '../bird-picture';
 import BirdName from '../bird-name';
 import Player from '../audioplayer';
 
 const QuestionContainer = ({isQuestionOpen, birdData}) => {
-  // const controlPlayer = createRef();
 
-  // if (!isQuestionOpen) Player.pause();
-  // console.log(controlPlayer.current);
+  console.log(birdData);
   return (
     <div className="col-12 mb-4 question-container">
       <div className="row">
