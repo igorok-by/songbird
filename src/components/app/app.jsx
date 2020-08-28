@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './app.scss';
-import BIRD_GROUPS from '../../data/birdGroups';
+// import BIRD_GROUPS from '../../data/birdGroups';
 import BIRDS_DATA from '../../data/birds';
-import getRandomNumber from '../../utils/getRandomNumber';
 import AUDIO_SRC from '../../data/audioSrc';
+import getRandomNumber from '../../utils/getRandomNumber';
+import * as constants from '../../data/constants';
 
 import Header from '../header';
+import GameScreen from '../game-screen';
+import FinishScreen from '../finish-screen';
 import GroupsList from '../groups-list';
-import QuestionContainer from '../question-container';
-import AnswerContainer from '../answer-container';
-import ButtonNext from '../button-next';
 
 const setBirdGroups = (currNumber) =>
-  BIRD_GROUPS.map((group, idx) => {
+  constants.BIRD_GROUPS.map((group, idx) => {
     let isActive = false;
     if (idx === currNumber) isActive = true;
     return {
@@ -50,24 +50,28 @@ const App = () => {
   const [generalScore, setGeneralScore] = useState(0);
   const [currentScore, setCurrentScore] = useState(groups.length - 1);
 
+  const [isGameFinished, setGameFinished] = useState(false); 
   const [isQuestionLast, setQuestionLast] = useState(false);
   const [isQuestionOpen, setQuestionState] = useState(true);
   const [isAnswerEverClicked, setAnswerClicked] = useState(false);
 
   const handleFinish = () => {
-
+    setGameFinished(true);
   };
 
   const handleNextClick = () => {
-    console.log(isQuestionOpen);
-    setQuestionState(true);
-    setAnswerClicked(false);
-    setCurrNumberOfGroup(currNumberOfGroup + 1);
-    setActiveGroup(toggleActiveGroup(groups, BIRD_GROUPS[currNumberOfGroup + 1]));
-    setAnswersStatus(setBirdItems(currNumberOfGroup + 1));
-    setNumbOfHiddenBird(getRandomNumber(0, birdGroupData.length - 1));
-    if (currNumberOfGroup === (groups.length - 2)) {
-      setQuestionLast(true);
+    if (isQuestionLast) {
+      handleFinish();
+    } else {
+      setQuestionState(true);
+      setAnswerClicked(false);
+      setCurrNumberOfGroup(currNumberOfGroup + 1);
+      setActiveGroup(toggleActiveGroup(groups, constants.BIRD_GROUPS[currNumberOfGroup + 1]));
+      setAnswersStatus(setBirdItems(currNumberOfGroup + 1));
+      setNumbOfHiddenBird(getRandomNumber(0, birdGroupData.length - 1));
+      if (currNumberOfGroup === (groups.length - 2)) {
+        setQuestionLast(true);
+      }
     }
   };
 
@@ -98,10 +102,23 @@ const App = () => {
     resultSound.play();
     setAnswersStatus(newBirdGroupData);
     if (!isAnswerEverClicked) setAnswerClicked(true);
-    console.log('1', isQuestionOpen);
-    if (isQuestionLast) handleFinish();
   };
 
+  const handleRestartGame = () => {
+    setCurrNumberOfGroup(0);
+    setActiveGroup(setBirdGroups(currNumberOfGroup));
+    setAnswersStatus(setBirdItems(currNumberOfGroup));
+
+    setNumbOfHiddenBird(getRandomNumber(0, birdGroupData.length - 1));
+    setNumbOfClickedBird(0);
+    setGeneralScore(0);
+    setCurrentScore(groups.length - 1);
+
+    setGameFinished(false); 
+    setQuestionLast(false);
+    setQuestionState(true);
+    setAnswerClicked(false);
+  };
   
   return (
     <div className="container">
@@ -112,20 +129,23 @@ const App = () => {
         <GroupsList
           birdGroups={groups} />
 
-        <QuestionContainer 
-          isQuestionOpen={isQuestionOpen}
-          birdData={birdGroupData[currNumberOfHiddenBird]} />
-          
-        <AnswerContainer
-          isAnswerEverClicked={isAnswerEverClicked}
-          currNumberOfClickedBird={currNumberOfClickedBird}
+        <GameScreen
+          // birdGroups={groups}
           birdGroupData={birdGroupData}
-          handleAnswerClick={handleAnswerClick} />
-
-        <ButtonNext
-          isQuestionLast={isQuestionLast}
+          isGameFinished={isGameFinished}
           isQuestionOpen={isQuestionOpen}
+          isAnswerEverClicked={isAnswerEverClicked}
+          // isQuestionLast={isQuestionLast}
+          currNumberOfClickedBird={currNumberOfClickedBird}
+          currNumberOfHiddenBird={currNumberOfHiddenBird}
+          handleAnswerClick={handleAnswerClick}
           handleNextClick={handleNextClick} />
+
+        <FinishScreen
+          isGameFinished={isGameFinished}
+          generalScore={generalScore}
+          bestScore={groups.length * 5}
+          handleRestartGame={handleRestartGame} />
       </div>
     </div>
   );

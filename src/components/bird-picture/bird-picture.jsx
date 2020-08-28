@@ -3,13 +3,9 @@ import './bird-picture.scss';
 import dummyPic from '../../assets/img/dummy.jpg';
 
 const BirdPicture = ({isQuestionOpen, birdData}) => {
-  // console.log(birdData.image);
   let imgSrc = birdData.image;
-  if (isQuestionOpen) {
-    imgSrc = dummyPic;
-  }
-
-  // console.log(imgSrc);
+  
+  if (isQuestionOpen) imgSrc = dummyPic;
 
   return (
     <img

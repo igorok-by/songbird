@@ -6,7 +6,7 @@ import Player from '../audioplayer';
 
 const QuestionContainer = ({isQuestionOpen, birdData}) => {
 
-  console.log(birdData);
+  console.log('Ответ: ', birdData.name);
   return (
     <div className="col-12 mb-4 question-container">
       <div className="row">
