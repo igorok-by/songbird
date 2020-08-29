@@ -24,7 +24,6 @@ const QuestionContainer = ({isQuestionOpen, birdData}) => {
             </div>
             <div className="flex-fill list-group-item">
               <Player
-                // controlPlayer={controlPlayer}
                 isQuestionOpen={isQuestionOpen}
                 birdData={birdData} />
             </div>

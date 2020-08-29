@@ -1,11 +1,12 @@
 import React  from 'react';
+import './groups-list-item.scss';
 
 const GroupsListItem = ({title, isActive}) => {
   return (
     <li className={
-      `page-item flex-fill text-center ${isActive ? 'active' : ''}`
+      `page-item flex-fill groups-list-item ${isActive ? 'active' : ''}`
     }>
-      <a className="page-link" href="/#">{title}</a>
+      <p className="page-link">{title}</p>
     </li>
   )
 };

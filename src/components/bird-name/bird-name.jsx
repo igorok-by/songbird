@@ -15,7 +15,9 @@ const BirdName = ({isQuestionOpen, birdData}) => {
   };
 
   return (
-    <h4><Name /></h4>
+    <h4 className="bird-name">
+      <Name />
+    </h4>
   )
 };
 

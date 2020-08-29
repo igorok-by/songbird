@@ -1,5 +1,47 @@
 @import "../../assets/scss/vars";
 
 .bird-picture {
-  object-fit: cover;
+  position: relative;
+
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+  
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+  }
+  
+  &--padded {
+    background-color: $light;
+  }
+
+  &--padded &__img {
+    top: 2rem;
+    left: 2rem;
+
+    width: calc(100% - 4rem);
+    height: calc(100% - 4rem);
+
+    animation: 1s ease-in-out 0s infinite alternate bubble;
+
+    object-fit: contain;
+  }
+}
+
+
+@keyframes bubble {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
 }

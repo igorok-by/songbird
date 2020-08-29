@@ -14,7 +14,7 @@ const BirdsList = ({birdGroupData, handleAnswerClick}) => {
   );
 
   return (
-    <div className="col-6">
+    <div className="col-4">
       <ul className="list-group w-100">
         {birdItems}
       </ul>

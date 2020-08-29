@@ -11,11 +11,9 @@ const GroupsList = ({birdGroups}) => {
 
   return (
     <div className="col-12">
-      <div className="questions-list w-100">
-        <ul className="pagination justify-content-between">
-          {groupsList}
-        </ul>
-      </div>
+      <ul className="pagination justify-content-between groups-list">
+        {groupsList}
+      </ul>
     </div>
   )
 };

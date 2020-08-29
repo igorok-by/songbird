@@ -1,5 +1,5 @@
 import React  from 'react';
-import dummyPic from '../../assets/img/dummy.jpg';
+import dummyPic from '../../assets/img/dummy.png';
 
 const FinishScreen = ({isGameFinished, generalScore, bestScore, handleRestartGame}) => {
   console.log(isGameFinished, generalScore);
