@@ -1,0 +1,32 @@
+@import "../../assets/scss/vars";
+
+.finish-screen {
+
+  &--h-50 {
+    height: 50vh;
+  }
+
+  h2 {
+    font-size: 4rem;
+    color: $warning;
+  }
+
+  p {
+    margin-bottom: 3rem;
+
+    font-size: 2rem;
+    color: $warning;
+  }
+
+  span {
+    color: $success;
+  }
+
+  button {
+    font-size: 1.3rem;
+  }
+
+  img {
+    max-width: 340px;
+  }
+}

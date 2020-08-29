@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './app.scss';
-// import BIRD_GROUPS from '../../data/birdGroups';
 import BIRDS_DATA from '../../data/birds';
 import AUDIO_SRC from '../../data/audioSrc';
 import getRandomNumber from '../../utils/getRandomNumber';
@@ -65,6 +64,7 @@ const App = () => {
     } else {
       setQuestionState(true);
       setAnswerClicked(false);
+      setCurrentScore(groups.length - 1);
       setCurrNumberOfGroup(currNumberOfGroup + 1);
       setActiveGroup(toggleActiveGroup(groups, constants.BIRD_GROUPS[currNumberOfGroup + 1]));
       setAnswersStatus(setBirdItems(currNumberOfGroup + 1));
@@ -130,12 +130,10 @@ const App = () => {
           birdGroups={groups} />
 
         <GameScreen
-          // birdGroups={groups}
           birdGroupData={birdGroupData}
           isGameFinished={isGameFinished}
           isQuestionOpen={isQuestionOpen}
           isAnswerEverClicked={isAnswerEverClicked}
-          // isQuestionLast={isQuestionLast}
           currNumberOfClickedBird={currNumberOfClickedBird}
           currNumberOfHiddenBird={currNumberOfHiddenBird}
           handleAnswerClick={handleAnswerClick}

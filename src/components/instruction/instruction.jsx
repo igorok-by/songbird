@@ -5,7 +5,7 @@ const Instruction = () => {
   return (
     <div className="instruction">
       <p>Послушайте плеер.</p>
-      <p>Выберите птицу из списка</p>
+      <p>Выберите птицу из списка.</p>
     </div>
   )
 };

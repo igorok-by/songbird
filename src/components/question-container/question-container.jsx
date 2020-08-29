@@ -8,7 +8,7 @@ const QuestionContainer = ({isQuestionOpen, birdData}) => {
 
   console.log('Ответ: ', birdData.name);
   return (
-    <div className="col-12 mb-4 question-container">
+    <div className="col-12 mb-3 question-container">
       <div className="row">
         <div className="col-3">
           <BirdPicture

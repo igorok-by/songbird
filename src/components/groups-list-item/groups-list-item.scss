@@ -1,21 +1,26 @@
 @import "../../assets/scss/vars";
 
 .groups-list-item {
+  font-size: 1.1rem;
   text-align: center;
-  
+
   p {
     margin-bottom: 0;
+
     color: $primary;
+
     background-color: $light;
   }
-  
+
   p:hover {
     color: $primary;
+
     background-color: $light;
   }
 
   &.active.page-item p {
     color: $dark;
+
     background-color: $secondary;
     border-color: $secondary;
   }

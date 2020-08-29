@@ -5,7 +5,7 @@ import BirdDetails from '../bird-details';
 
 const AnswerContainer = ({isAnswerEverClicked, currNumberOfClickedBird, birdGroupData, handleAnswerClick}) => {
   return (
-    <div className="col-12 mb-4 answer-container">
+    <div className="col-12 mb-3 answer-container">
       <div className="row">
         <BirdsList
           birdGroupData={birdGroupData}

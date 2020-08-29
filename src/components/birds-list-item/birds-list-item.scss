@@ -6,29 +6,42 @@
   transition: $def-transition;
 
   &:hover {
-    background-color: #444444;
+    background-color: $primary;
+
+    button {
+      color: $info;
+    }
   }
 
   span {
     display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin-right: 15px;
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-right: 1rem;
 
-    background-color: $primary;
+    background-color: $info;
     border-radius: 50%;
 
     transition: $def-transition;
   }
 
   button {
-    padding: .75rem 1.25rem;
-    border: none;
-    background: none;
     width: 100%;
-    text-align: left;
-  }
+    padding: 0.75rem 1.25rem;
 
+    font-size: 1.1rem;
+    text-align: left;
+    color: $primary;
+
+    background: none;
+    border: none;
+
+    transition: $def-transition;
+
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 .birds-list-item--wrong {
@@ -39,6 +52,6 @@
 
 .birds-list-item--right {
   span {
-    background-color: $success-light;
+    background-color: $success;
   }
 }
