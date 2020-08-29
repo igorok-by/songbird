@@ -1,0 +1,33 @@
+@import "../../assets/scss/vars";
+
+.logo {
+  display: flex;
+  align-items: flex-end;
+
+  &:hover {
+    text-decoration: none;
+
+    .logo__descr span {
+      color: $warning;
+    }
+  }
+}
+
+.logo__img {
+  width: 100%;
+  max-width: 7rem;
+
+  fill: $warning;
+}
+
+.logo__descr {
+  font-size: 2.3rem;
+  font-family: $secondFont;
+  color: $warning;
+
+  span {
+    color: $secondary;
+
+    transition: $def-transition;
+  }
+}

@@ -1,7 +1,7 @@
 @import "../../assets/scss/vars";
 
 .birds-list-item {
-  cursor: pointer;
+  padding: 0;
 
   transition: $def-transition;
 
@@ -20,6 +20,15 @@
 
     transition: $def-transition;
   }
+
+  button {
+    padding: .75rem 1.25rem;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+  }
+
 }
 
 .birds-list-item--wrong {

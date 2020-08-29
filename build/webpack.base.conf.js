@@ -60,11 +60,7 @@ module.exports = {
           limit: 8192,
           name: `${PATHS.assets}img/[name].[ext]`,
         },
-      }]
-      // loader: 'file-loader',
-      // options: {
-      //   name: '[name].[ext]',
-      // },
+      }],
     }, {
       test: /\.mp3$/,
       loader: 'file-loader',
@@ -112,6 +108,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+      { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
       { from: `${PATHS.src}/static`, to: '' },
     ]),
 
