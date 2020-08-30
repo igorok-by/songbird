@@ -1,1 +1,83 @@
 @import "../../assets/scss/vars";
+$rhap_bar-color: $warning !default;
+
+.audioplayer {
+  padding: 0;
+  padding-top: 10px;
+
+  box-shadow: none;
+
+  .rhap_play-pause-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid $success;
+    border-radius: 50%;
+
+    .audioplayer__play,
+    .audioplayer__pause {
+      width: 20px;
+      height: 20px;
+
+      fill: $success;
+    }
+  }
+
+  .rhap_progress-section {
+    position: relative;
+  }
+
+  .rhap_time {
+    position: absolute;
+    top: 30px;
+
+    font-size: 0.9rem;
+    color: $primary;
+  }
+
+  .rhap_total-time {
+    right: 17px;
+  }
+
+  .rhap_current-time {
+    left: 53px;
+  }
+
+  .rhap_volume-container {
+    margin-right: 20px;
+  }
+
+  .rhap_volume-button svg {
+    color: $success;
+  }
+
+  .rhap_progress-indicator {
+    top: -6px;
+
+    width: 17px;
+    height: 17px;
+  }
+
+  .rhap_progress-indicator,
+  .rhap_volume-indicator {
+    background-color: $success;
+    box-shadow: 0 0 5px $success;
+  }
+
+  .rhap_progress-bar {
+    background-color: rgba($color: $success, $alpha: 0.3);
+  }
+
+  .rhap_volume-bar {
+    background: linear-gradient(to right, rgba($color: $success, $alpha: 0.3) 0%, $success 50%, $warning 100%);
+  }
+
+  .rhap_progress-filled {
+    background: linear-gradient(to right, $success 0%, $success 30%, $warning 100%);
+  }
+
+  *:focus {
+    outline: none;
+  }
+}
