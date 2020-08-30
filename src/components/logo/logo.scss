@@ -30,4 +30,8 @@
 
     transition: $def-transition;
   }
+
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 1.5rem;
+  }
 }

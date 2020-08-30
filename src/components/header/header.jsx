@@ -9,7 +9,8 @@ const Header = ({score}) => {
     <div className="header
           col-12
           d-flex
-          align-items-end
+          align-items-center
+          align-items-sm-end
           justify-content-between">
       <Logo />
       <ScoreHolder score={score} />

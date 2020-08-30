@@ -4,4 +4,9 @@
   font-weight: bold;
   font-size: 2.5rem;
   color: $warning;
+
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 1.5rem;
+  }
 }
+

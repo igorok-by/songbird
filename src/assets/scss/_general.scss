@@ -9,8 +9,12 @@ html {
     font-size: 15px;
   }
 
+  @media screen and (max-width: $smDesktopWidth) {
+    font-size: 12px;
+  }
+
   @media screen and (max-width: $tableWidth) {
-    font-size: 14px;
+    font-size: 11px;
   }
 
   @media screen and (max-width: $phoneWidth) {

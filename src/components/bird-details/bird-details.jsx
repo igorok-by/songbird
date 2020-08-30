@@ -11,12 +11,12 @@ import BirdDescription from '../bird-description';
 const BirdDetails = ({isAnswerEverClicked, birdData}) => {
 
   const classesInstruction = isAnswerEverClicked ? 'd-none' : 'col-12';
-  const classesPicture = isAnswerEverClicked ? 'col-4 mb-3 d-flex' : 'd-none';
-  const classesName = isAnswerEverClicked ? 'col-8 mb-3 d-flex' : 'd-none';
+  const classesPicture = isAnswerEverClicked ? 'col-12 col-sm-4 mb-3 d-flex' : 'd-none';
+  const classesName = isAnswerEverClicked ? 'col-12 col-sm-8 mb-3 d-flex' : 'd-none';
   const classesDescr = isAnswerEverClicked ? 'col-12' : 'd-none';
   
   return (
-    <div className="col-8">
+    <div className="col-12 col-md-8">
       <div className="row h-100">
         <div className={classesInstruction}>
           <Instruction />

@@ -10,12 +10,12 @@ const QuestionContainer = ({isQuestionOpen, birdData}) => {
   return (
     <div className="col-12 mb-3 question-container">
       <div className="row">
-        <div className="col-3">
+        <div className="col-12 col-sm-4 col-lg-3 mb-3 mb-sm-0 align-items-center d-flex">
           <BirdPicture
             isQuestionOpen={isQuestionOpen}
             birdData={birdData} />
         </div>
-        <div className="col-9 d-flex">
+        <div className="col-12 col-sm-8 col-lg-9 d-flex">
           <div className="flex-fill list-group list-group-flush rounded">
             <div className="flex-fill list-group-item">
               <BirdName
