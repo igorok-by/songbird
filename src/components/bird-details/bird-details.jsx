@@ -1,6 +1,4 @@
 import React from 'react';
-import './bird-details.scss';
-import birds from '../../data/birds';
 
 import Instruction from '../instruction';
 import BirdPicture from '../bird-picture';

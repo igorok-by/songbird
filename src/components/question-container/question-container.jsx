@@ -1,5 +1,5 @@
 import React from 'react';
-import './question-container.scss';
+
 import BirdPicture from '../bird-picture';
 import BirdName from '../bird-name';
 import Player from '../audioplayer';

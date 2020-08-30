@@ -1,5 +1,4 @@
 import React from 'react';
-import './birds-list.scss';
 
 import BirdsListItem from '../birds-list-item';
 

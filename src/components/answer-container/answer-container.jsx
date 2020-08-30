@@ -1,5 +1,4 @@
 import React from 'react';
-import './answer-container.scss';
 import BirdsList from '../birds-list';
 import BirdDetails from '../bird-details';
 

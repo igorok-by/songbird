@@ -1,5 +1,4 @@
 import React from 'react';
-import './groups-list.scss';
 
 import GroupsListItem from '../groups-list-item'
 

@@ -1,6 +1,5 @@
 import React  from 'react';
 
-import GroupsList from '../groups-list';
 import QuestionContainer from '../question-container';
 import AnswerContainer from '../answer-container';
 import ButtonNext from '../button-next';

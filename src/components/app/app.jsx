@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './app.scss';
 import BIRDS_DATA from '../../data/birds';
 import AUDIO_SRC from '../../data/audioSrc';
 import getRandomNumber from '../../utils/getRandomNumber';
