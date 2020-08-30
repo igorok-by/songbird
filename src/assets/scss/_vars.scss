@@ -1,0 +1,30 @@
+// Font
+$mainFont: "Rubik", Helvetica, Arial, sans-serif;
+$secondFont: "Kosko", serif;
+$lgDesktopWidth: 1440px;
+$desktopWidth: 1199px;
+$smDesktopWidth: 991px;
+$tableWidth: 767px;
+$phoneWidth: 575px;
+$smPhoneWidth: 320px;
+
+// Main color
+$primary: #33658a !default;
+$secondary: #55dde0 !default;
+$success: #f6ae2d !default;
+$info: #957186 !default;
+$warning: #f26419 !default;
+$danger: #e51c23 !default;
+$light: #ffffff !default;
+$dark: #2f4858 !default;
+$black: #000000 !default;
+
+// Size
+$mainFontColor: $primary;
+$mainFontSize: 16px;
+$mainFontWeight: normal;
+$mainLineHeight: 1;
+
+// Transition
+$def-transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+$long-transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);

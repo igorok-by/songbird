@@ -1,0 +1,57 @@
+@import "../../assets/scss/vars";
+
+.birds-list-item {
+  padding: 0;
+
+  transition: $def-transition;
+
+  &:hover {
+    background-color: $primary;
+
+    button {
+      color: $info;
+    }
+  }
+
+  span {
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-right: 1rem;
+
+    background-color: $info;
+    border-radius: 50%;
+
+    transition: $def-transition;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+
+    font-size: 1.1rem;
+    text-align: left;
+    color: $primary;
+
+    background: none;
+    border: none;
+
+    transition: $def-transition;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.birds-list-item--wrong {
+  span {
+    background-color: $danger;
+  }
+}
+
+.birds-list-item--right {
+  span {
+    background-color: $success;
+  }
+}
