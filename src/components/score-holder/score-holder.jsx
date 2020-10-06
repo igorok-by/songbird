@@ -1,13 +1,13 @@
-import React from 'react';
-import './score-holder.scss';
+import React from 'react'
+import './score-holder.scss'
 
-const ScoreHolder = ({score}) => {
+const ScoreHolder = ({ score }) => {
   return (
     <h4 className="score-holder">
-      Счёт: 
+      Счёт:
       <span>{` ${score}`}</span>
     </h4>
   )
-};
+}
 
-export default ScoreHolder;
+export default ScoreHolder

@@ -1,3 +1,3 @@
-import BirdDetails from './bird-details';
+import BirdDetails from './bird-details'
 
-export default BirdDetails;
+export default BirdDetails

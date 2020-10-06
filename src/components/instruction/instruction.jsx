@@ -1,5 +1,5 @@
-import React from 'react';
-import './instruction.scss';
+import React from 'react'
+import './instruction.scss'
 
 const Instruction = () => {
   return (
@@ -8,6 +8,6 @@ const Instruction = () => {
       <p>Выберите птицу из списка.</p>
     </div>
   )
-};
+}
 
-export default Instruction;
+export default Instruction

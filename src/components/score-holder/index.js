@@ -1,3 +1,3 @@
-import ScoreHolder from './score-holder';
+import ScoreHolder from './score-holder'
 
-export default ScoreHolder;
+export default ScoreHolder

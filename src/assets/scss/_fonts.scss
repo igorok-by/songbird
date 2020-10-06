@@ -1,11 +1,12 @@
 @font-face {
-  font-family: "Kosko";
-  src: url("/assets/fonts/KoskoBold/KoskoBold.eot");
-  src: local("KoskoBold"), local("KoskoBold/KoskoBold"),
-  url("/assets/fonts/KoskoBold/KoskoBold.eot?#iefix") format("embedded-opentype"),
-  url("/assets/fonts/KoskoBold/KoskoBold.woff") format("woff"),
-  url("/assets/fonts/KoskoBold/KoskoBold.ttf") format("truetype"),
-  url('/assets/fonts/KoskoBold/KoskoBold.svg') format('svg');
+  font-family: 'Kosko';
+  src: url('/assets/fonts/KoskoBold/KoskoBold.eot');
+  src: local('KoskoBold'), local('KoskoBold/KoskoBold'),
+    url('/assets/fonts/KoskoBold/KoskoBold.eot?#iefix')
+      format('embedded-opentype'),
+    url('/assets/fonts/KoskoBold/KoskoBold.woff') format('woff'),
+    url('/assets/fonts/KoskoBold/KoskoBold.ttf') format('truetype'),
+    url('/assets/fonts/KoskoBold/KoskoBold.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }

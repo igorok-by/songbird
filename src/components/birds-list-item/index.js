@@ -1,3 +1,3 @@
-import BirdsListItem from './birds-list-item';
+import BirdsListItem from './birds-list-item'
 
-export default BirdsListItem;
+export default BirdsListItem

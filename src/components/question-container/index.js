@@ -1,3 +1,3 @@
-import QuestionContainer from './question-container';
+import QuestionContainer from './question-container'
 
-export default QuestionContainer;
+export default QuestionContainer

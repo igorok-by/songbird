@@ -1,11 +1,10 @@
-import React from 'react';
+import React from 'react'
 
 import GroupsListItem from '../groups-list-item'
 
-const GroupsList = ({birdGroups}) => {
-
-  const groupsList = birdGroups.map(({title, key, isActive}) => {
-    return <GroupsListItem title={title} key={key} isActive={isActive} />;
+const GroupsList = ({ birdGroups }) => {
+  const groupsList = birdGroups.map(({ title, key, isActive }) => {
+    return <GroupsListItem title={title} key={key} isActive={isActive} />
   })
 
   return (
@@ -15,6 +14,6 @@ const GroupsList = ({birdGroups}) => {
       </ul>
     </div>
   )
-};
+}
 
-export default GroupsList;
+export default GroupsList

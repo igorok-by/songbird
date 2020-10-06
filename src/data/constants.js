@@ -1,4 +1,4 @@
-export const MAX_POINTS_ROUND = 5;
+export const MAX_POINTS_ROUND = 5
 
 export const BIRD_GROUPS = [
   'Разминка',
@@ -7,4 +7,4 @@ export const BIRD_GROUPS = [
   'Певчие птицы',
   'Хищные птицы',
   'Морские птицы',
-];
+]

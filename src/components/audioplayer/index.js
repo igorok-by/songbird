@@ -1,3 +1,3 @@
-import Player from './audioplayer';
+import Player from './audioplayer'
 
-export default Player;
+export default Player

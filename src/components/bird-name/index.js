@@ -1,3 +1,3 @@
-import BirdName from './bird-name';
+import BirdName from './bird-name'
 
-export default BirdName;
+export default BirdName

@@ -69,11 +69,21 @@
   }
 
   .rhap_volume-bar {
-    background: linear-gradient(to right, rgba($color: $success, $alpha: 0.3) 0%, $success 50%, $warning 100%);
+    background: linear-gradient(
+    to right,
+    rgba($color: $success, $alpha: 0.3) 0%,
+    $success 50%,
+    $warning 100%
+    );
   }
 
   .rhap_progress-filled {
-    background: linear-gradient(to right, $success 0%, $success 30%, $warning 100%);
+    background: linear-gradient(
+    to right,
+    $success 0%,
+    $success 30%,
+    $warning 100%
+    );
   }
 
   *:focus {

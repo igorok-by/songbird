@@ -1,3 +1,3 @@
-import BirdPicture from './bird-picture';
+import BirdPicture from './bird-picture'
 
-export default BirdPicture;
+export default BirdPicture

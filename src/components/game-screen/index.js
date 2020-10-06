@@ -1,3 +1,3 @@
-import GameScreen from './game-screen';
+import GameScreen from './game-screen'
 
-export default GameScreen;
+export default GameScreen

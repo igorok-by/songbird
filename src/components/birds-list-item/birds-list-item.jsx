@@ -1,31 +1,28 @@
-import React  from 'react';
-import './birds-list-item.scss';
+import React from 'react'
+import './birds-list-item.scss'
 
-const BirdsListItem = ({answerStatus, birdName, handleClick}) => {
-  let classes = 'list-group-item';
+const BirdsListItem = ({ answerStatus, birdName, handleClick }) => {
+  let classes = 'list-group-item'
 
   switch (answerStatus) {
     case 'wrong':
-      classes += ' birds-list-item birds-list-item--wrong';
-      break;
+      classes += ' birds-list-item birds-list-item--wrong'
+      break
     case 'right':
-      classes += ' birds-list-item birds-list-item--right';
-      break;
+      classes += ' birds-list-item birds-list-item--right'
+      break
     default:
-      classes += ' birds-list-item';
+      classes += ' birds-list-item'
   }
 
   return (
-    <li
-      className={classes}>
-      <button
-        type="button"
-        onClick={() => handleClick(birdName)}>
+    <li className={classes}>
+      <button type="button" onClick={() => handleClick(birdName)}>
         <span />
         {birdName}
       </button>
     </li>
   )
-};
+}
 
-export default BirdsListItem;
+export default BirdsListItem

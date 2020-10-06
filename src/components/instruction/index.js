@@ -1,3 +1,3 @@
-import Instruction from './instruction';
+import Instruction from './instruction'
 
-export default Instruction;
+export default Instruction

@@ -1,3 +1,3 @@
-import AnswerContainer from './answer-container';
+import AnswerContainer from './answer-container'
 
-export default AnswerContainer;
+export default AnswerContainer

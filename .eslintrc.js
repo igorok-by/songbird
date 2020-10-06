@@ -9,7 +9,13 @@ module.exports = {
     "prettier",
     "prettier/react"
   ],
-  plugins: ["import", "jsx-a11y", "react", "react-hooks"],
+  plugins: [
+    "import",
+    "jsx-a11y",
+    "react",
+    "react-hooks",
+    "prettier"
+  ],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
@@ -19,6 +25,6 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
-    "strict": 0
+    "prettier/prettier": "warn"
   },
 };

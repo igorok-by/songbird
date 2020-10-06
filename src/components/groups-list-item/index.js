@@ -1,3 +1,3 @@
-import GroupsListItem from './groups-list-item';
+import GroupsListItem from './groups-list-item'
 
-export default GroupsListItem;
+export default GroupsListItem

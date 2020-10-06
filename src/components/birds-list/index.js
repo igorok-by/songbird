@@ -1,3 +1,3 @@
-import BirdsList from './birds-list';
+import BirdsList from './birds-list'
 
-export default BirdsList;
+export default BirdsList

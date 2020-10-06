@@ -1,3 +1,3 @@
-import FinishScreen from './finish-screen';
+import FinishScreen from './finish-screen'
 
-export default FinishScreen;
+export default FinishScreen

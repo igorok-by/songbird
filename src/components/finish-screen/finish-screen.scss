@@ -1,7 +1,6 @@
 @import "../../assets/scss/vars";
 
 .finish-screen {
-
   &--h-50 {
     height: 50vh;
   }
@@ -31,7 +30,6 @@
   }
 
   @media screen and (max-width: $phoneWidth) {
-    
     h2 {
       font-size: 3rem;
     }

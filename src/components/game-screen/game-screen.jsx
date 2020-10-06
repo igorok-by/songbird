@@ -1,8 +1,8 @@
-import React  from 'react';
+import React from 'react'
 
-import QuestionContainer from '../question-container';
-import AnswerContainer from '../answer-container';
-import ButtonNext from '../button-next';
+import QuestionContainer from '../question-container'
+import AnswerContainer from '../answer-container'
+import ButtonNext from '../button-next'
 
 const GameScreen = ({
   isGameFinished,
@@ -14,28 +14,30 @@ const GameScreen = ({
   handleAnswerClick,
   handleNextClick,
 }) => {
-
   if (!isGameFinished) {
     return (
       <>
-        <QuestionContainer 
+        <QuestionContainer
           isQuestionOpen={isQuestionOpen}
-          birdData={birdGroupData[currNumberOfHiddenBird]} />
-          
+          birdData={birdGroupData[currNumberOfHiddenBird]}
+        />
+
         <AnswerContainer
           isAnswerEverClicked={isAnswerEverClicked}
           currNumberOfClickedBird={currNumberOfClickedBird}
           birdGroupData={birdGroupData}
-          handleAnswerClick={handleAnswerClick} />
-  
+          handleAnswerClick={handleAnswerClick}
+        />
+
         <ButtonNext
           isQuestionOpen={isQuestionOpen}
-          handleNextClick={handleNextClick} />
+          handleNextClick={handleNextClick}
+        />
       </>
-    );
+    )
   }
-  
-  return null;
-};
 
-export default GameScreen;
+  return null
+}
+
+export default GameScreen

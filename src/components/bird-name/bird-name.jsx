@@ -1,10 +1,9 @@
-import React from 'react';
-import './bird-name.scss';
+import React from 'react'
+import './bird-name.scss'
 
-const BirdName = ({isQuestionOpen, birdData}) => {
-
+const BirdName = ({ isQuestionOpen, birdData }) => {
   const Name = () => {
-    if (isQuestionOpen) return '******';
+    if (isQuestionOpen) return '******'
 
     return (
       <>
@@ -12,13 +11,13 @@ const BirdName = ({isQuestionOpen, birdData}) => {
         <span> {`(${birdData.species})`}</span>
       </>
     )
-  };
+  }
 
   return (
     <h4 className="bird-name">
       <Name />
     </h4>
   )
-};
+}
 
-export default BirdName;
+export default BirdName
