@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { memo } from 'react'
+import classNames from 'classnames'
+
 import './finish-screen.scss'
 import birdHeroPic from '../../assets/img/bird-hero.png'
 
@@ -8,40 +10,39 @@ const FinishScreen = ({
   bestScore,
   handleRestartGame,
 }) => {
-  let classes =
-    'col-12 d-flex flex-column align-items-center justify-content-center finish-screen'
+  const classes = classNames(
+    'col-12',
+    'd-flex',
+    'flex-column',
+    'align-items-center',
+    'justify-content-center',
+    'finish-screen',
+    { 'finish-screen--h-50': generalScore !== bestScore },
+  )
 
-  if (isGameFinished) {
-    let resultElem = (
-      <img src={birdHeroPic} className="w-100 rounded" alt="Птичка" />
-    )
-
-    if (generalScore !== bestScore) {
-      resultElem = (
-        <button
-          className="btn btn-block w-75 button-next"
-          type="button"
-          onClick={handleRestartGame}
-        >
-          Попробовать еще раз!
-        </button>
-      )
-      classes += ' finish-screen--h-50'
-    }
-
-    return (
+  return (
+    isGameFinished && (
       <div className={classes}>
         <h2>Поздравляем!</h2>
         <p>
           Вы прошли викторину и набрали <span>{generalScore}</span> из{' '}
           <span>{bestScore}</span> возможных баллов
         </p>
-        {resultElem}
+
+        {generalScore === bestScore ? (
+          <img src={birdHeroPic} className="w-100 rounded" alt="Птичка" />
+        ) : (
+          <button
+            className="btn btn-block w-75 button-next"
+            type="button"
+            onClick={handleRestartGame}
+          >
+            Попробовать еще раз!
+          </button>
+        )}
       </div>
     )
-  }
-
-  return null
+  )
 }
 
-export default FinishScreen
+export default memo(FinishScreen)
