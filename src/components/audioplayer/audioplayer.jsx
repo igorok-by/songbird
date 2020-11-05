@@ -24,7 +24,7 @@ const Player = ({ isQuestionOpen, birdData }) => {
 
   useEffect(() => {
     if (!isQuestionOpen) player.current.audio.current.pause()
-  })
+  }, [isQuestionOpen])
 
   return (
     <AudioPlayer

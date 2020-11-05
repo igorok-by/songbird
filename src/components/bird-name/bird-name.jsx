@@ -1,23 +1,16 @@
-import React from 'react'
+import React, { memo } from 'react'
 import './bird-name.scss'
 
-const BirdName = ({ isQuestionOpen, birdData }) => {
-  const Name = () => {
-    if (isQuestionOpen) return '******'
-
-    return (
+const BirdName = ({ isQuestionOpen, birdData }) => (
+  <h4 className="bird-name">
+    {isQuestionOpen ? (
+      '******'
+    ) : (
       <>
-        {birdData.name}
-        <span> {`(${birdData.species})`}</span>
+        {birdData.name} <span>({birdData.species})</span>
       </>
-    )
-  }
+    )}
+  </h4>
+)
 
-  return (
-    <h4 className="bird-name">
-      <Name />
-    </h4>
-  )
-}
-
-export default BirdName
+export default memo(BirdName)

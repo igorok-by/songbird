@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { memo } from 'react'
 import './header.scss'
 
 import Logo from '../logo'
-import ScoreHolder from '../score-holder'
 
 const Header = ({ score }) => {
   return (
-    <div
+    <header
       className="header
           col-12
           d-flex
@@ -15,9 +14,9 @@ const Header = ({ score }) => {
           justify-content-between"
     >
       <Logo />
-      <ScoreHolder score={score} />
-    </div>
+      <h4 className="header__score">Счёт: {score}</h4>
+    </header>
   )
 }
 
-export default Header
+export default memo(Header)
