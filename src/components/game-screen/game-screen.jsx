@@ -5,7 +5,6 @@ import AnswerContainer from '../answer-container'
 import ButtonNext from '../button-next'
 
 const GameScreen = ({
-  isGameFinished,
   isQuestionOpen,
   isAnswerEverClicked,
   currNumberOfClickedBird,
@@ -13,31 +12,25 @@ const GameScreen = ({
   birdGroupData,
   handleAnswerClick,
   handleNextClick,
-}) => {
-  if (!isGameFinished) {
-    return (
-      <>
-        <QuestionContainer
-          isQuestionOpen={isQuestionOpen}
-          birdData={birdGroupData[currNumberOfHiddenBird]}
-        />
+}) => (
+  <>
+    <QuestionContainer
+      isQuestionOpen={isQuestionOpen}
+      birdData={birdGroupData[currNumberOfHiddenBird]}
+    />
 
-        <AnswerContainer
-          isAnswerEverClicked={isAnswerEverClicked}
-          currNumberOfClickedBird={currNumberOfClickedBird}
-          birdGroupData={birdGroupData}
-          handleAnswerClick={handleAnswerClick}
-        />
+    <AnswerContainer
+      isAnswerEverClicked={isAnswerEverClicked}
+      currNumberOfClickedBird={currNumberOfClickedBird}
+      birdGroupData={birdGroupData}
+      handleAnswerClick={handleAnswerClick}
+    />
 
-        <ButtonNext
-          isQuestionOpen={isQuestionOpen}
-          handleNextClick={handleNextClick}
-        />
-      </>
-    )
-  }
-
-  return null
-}
+    <ButtonNext
+      isQuestionOpen={isQuestionOpen}
+      handleNextClick={handleNextClick}
+    />
+  </>
+)
 
 export default GameScreen

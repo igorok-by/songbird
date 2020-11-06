@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import './instruction.scss'
 
 const Instruction = () => {
@@ -10,4 +10,4 @@ const Instruction = () => {
   )
 }
 
-export default Instruction
+export default memo(Instruction)

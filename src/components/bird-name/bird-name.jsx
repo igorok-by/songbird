@@ -1,13 +1,13 @@
 import React, { memo } from 'react'
 import './bird-name.scss'
 
-const BirdName = ({ isQuestionOpen, birdData }) => (
+const BirdName = ({ isQuestionOpen, birdName, birdSpecies }) => (
   <h4 className="bird-name">
     {isQuestionOpen ? (
       '******'
     ) : (
       <>
-        {birdData.name} <span>({birdData.species})</span>
+        {birdName} <span>({birdSpecies})</span>
       </>
     )}
   </h4>

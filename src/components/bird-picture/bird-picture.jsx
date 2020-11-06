@@ -1,21 +1,23 @@
-import React from 'react'
+import React, { memo } from 'react'
+import classNames from 'classnames'
+
 import './bird-picture.scss'
 import dummyPic from '../../assets/img/dummy.png'
 
-const BirdPicture = ({ isQuestionOpen, birdData }) => {
-  let imgSrc = birdData.image
-  let classes = 'rounded bird-picture'
-
-  if (isQuestionOpen) {
-    imgSrc = dummyPic
-    classes += ' bird-picture--padded'
-  }
+const BirdPicture = ({ isQuestionOpen, image }) => {
+  const classes = classNames('rounded', 'bird-picture', {
+    'bird-picture--padded': isQuestionOpen,
+  })
 
   return (
     <div className={classes}>
-      <img src={imgSrc} className="rounded bird-picture__img" alt="Птичка" />
+      <img
+        src={isQuestionOpen ? dummyPic : image}
+        className="rounded bird-picture__img"
+        alt="Птичка"
+      />
     </div>
   )
 }
 
-export default BirdPicture
+export default memo(BirdPicture)
